@@ -1,7 +1,7 @@
 PROMPT_COMMAND=__prompt_command
 
 __prompt_command() {
-  PS1="$? $"
+  PS1="$? $ "
 }
 
 if [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]]; then
