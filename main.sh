@@ -1,4 +1,8 @@
-export PS1="$ ";
+PROMPT_COMMAND=__prompt_command
+
+__prompt_command() {
+  PS1="$? $"
+}
 
 if [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]]; then
   source "/usr/local/etc/profile.d/bash_completion.sh"
