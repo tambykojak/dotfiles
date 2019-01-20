@@ -4,6 +4,7 @@ __prompt_command() {
   EXIT_CODE="$?"
   shell_session_history_check
   update_terminal_cwd
+  current_branch=""
 
   if [ -d .git ]; then
     current_branch="$(git rev-parse --abbrev-ref HEAD)"
