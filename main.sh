@@ -1,8 +1,18 @@
 PROMPT_COMMAND=__prompt_command
 
 __prompt_command() {
-  PS1="$? $ "
+  EXIT_CODE="$?"
+  shell_session_history_check
+  update_terminal_cwd
+
+  if [ -d .git ]; then
+    current_branch=" $(git rev-parse --abbrev-ref HEAD)"
+  fi
+
+  PS1="$EXIT_CODE \W$current_branch \$ "
 }
+
+eval "$(rbenv init -)"
 
 if [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]]; then
   source "/usr/local/etc/profile.d/bash_completion.sh"
@@ -16,4 +26,8 @@ google() {
         search="$search%20$term"
     done
     open "http://www.google.com/search?q=$search"
+}
+
+weather() {
+  curl wttr.in/$1
 }
