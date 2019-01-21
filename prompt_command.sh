@@ -7,7 +7,7 @@ __prompt_command() {
   current_branch=""
 
   if [ -d .git ]; then
-    current_branch="$(git rev-parse --abbrev-ref HEAD)"
+    current_branch="$(git rev-parse --abbrev-ref HEAD 2>/dev/null)"
 
     if [ $(git status | wc -l) -gt 4 ]; then
       current_branch+=" ±"
