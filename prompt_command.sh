@@ -8,11 +8,6 @@ __prompt_command() {
 
   if [ -d .git ]; then
     current_branch="$(git rev-parse --abbrev-ref HEAD 2>/dev/null)"
-
-    if [ $(git diff-index HEAD| wc -l) -gt 0 ]; then
-      current_branch+=" ±"
-    fi
-
     current_branch=" \[\e[1m\e[35m\][$current_branch]\[\e[0m\e[0m\]"
   fi
 
