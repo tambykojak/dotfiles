@@ -13,8 +13,8 @@ __prompt_command() {
       current_branch+=" ±"
     fi
 
-    current_branch=" \[\e[1m\e[34m\][$current_branch]\[\e[0m\e[0m\]"
+    current_branch=" \[\e[1m\e[35m\][$current_branch]\[\e[0m\e[0m\]"
   fi
 
-  PS1="$EXIT_CODE \W$current_branch \$ "
+  PS1="$EXIT_CODE \[\e[1m\e[36m\]\W\[\e[0m\e[0m\]$current_branch \$ "
 }
