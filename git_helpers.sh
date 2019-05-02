@@ -4,7 +4,7 @@ s() {
 
 c() {
   git add .
-  git commit -am
+  git commit -am "$@"
 }
 
 wip() {
