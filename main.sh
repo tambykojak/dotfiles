@@ -1,14 +1,16 @@
 dotfiles_directory=~/.dotfiles
 
 source $dotfiles_directory/prompt_command.sh
-source $dotfiles_directory/bash_completion.sh
+source $dotfiles_directory/android.sh
 source $dotfiles_directory/fun_methods.sh
 source $dotfiles_directory/git_helpers.sh
-source $dotfiles_directory/rbenv.sh
+# source $dotfiles_directory/rbenv.sh
 source $dotfiles_directory/nvm.sh
 
+alias pretty_json='python -m json.tool | pygmentize -l json'
+
 resource() {
-  source ~/.bash_profile
+  source ~/.zsh
 }
 
 edit-dotfiles() {
@@ -16,6 +18,6 @@ edit-dotfiles() {
   code .
 }
 
-edit-bash-profile() {
-  code ~/.bash_profile
+edit-zshrc() {
+  code ~/.zshrc
 }
